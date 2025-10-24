@@ -1,0 +1,15 @@
+# Ignore courses page
+courses.html
+
+# Ignore system files
+.DS_Store
+Thumbs.db
+
+# Ignore editor files
+*.swp
+*.swo
+*~
+
+# Ignore temporary files
+*.tmp
+*.temp
