@@ -166,9 +166,6 @@
                         </ul>
                     </div>
                     
-                    <div class="event-actions">
-                        <button class="btn btn-primary" onclick="downloadICS()">احفظ التاريخ</button>
-                    </div>
                 </div>
             </div>
         </div>
@@ -179,6 +176,7 @@
         <div class="container">
             <h2 class="section-title">أعضاء المكتب التنفيذي</h2>
             <div class="team-grid">
+                <!-- Main Executive Team (Always Visible) -->
                 <div class="team-card">
                     <div class="team-photo">
                         <img src="media/dahbi3.jpg" alt="صورة رئيس النادي" class="photo">
@@ -211,7 +209,7 @@
                     <p class="team-role">مسؤول المالية</p>
                 </div>
                 
-                <div class="team-card">
+                <div class="team-card additional-member" style="display: none;">
                     <div class="team-photo">
                         <img src="media/هباط رضا الله.jpg" alt="صورة مسؤول الأنشطة" class="photo">
                     </div>
@@ -219,28 +217,29 @@
                     <p class="team-role">مسؤول الأنشطة</p>
                 </div>
                 
-                <div class="team-card">
+                <!-- Additional Members (Hidden Initially) -->
+                <div class="team-card additional-member" style="display: none;">
                     <div class="team-photo">
                         <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIwIiBoZWlnaHQ9IjEyMCIgdmlld0JveD0iMCAwIDEyMCAxMjAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIxMjAiIGhlaWdodD0iMTIwIiBmaWxsPSIjRjdGOUZDIi8+CjxjaXJjbGUgY3g9IjYwIiBjeT0iNDAiIHI9IjIwIiBmaWxsPSIjMEMyQTgiLz4KPHBhdGggZD0iTTMwIDEwMEw5MCAxMDBMMzAgMTAwWiIgZmlsbD0iIzBCNUZGRiIvPgo8L3N2Zz4K" alt="صورة أمين الصندوق" class="photo">
                     </div>
                     <h3 class="team-name">غويلة اشرف</h3>
                     <p class="team-role">عضو</p>
                 </div>
-                <div class="team-card">
+                <div class="team-card additional-member" style="display: none;">
                     <div class="team-photo">
                         <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIwIiBoZWlnaHQ9IjEyMCIgdmlld0JveD0iMCAwIDEyMCAxMjAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIxMjAiIGhlaWdodD0iMTIwIiBmaWxsPSIjRjdGOUZDIi8+CjxjaXJjbGUgY3g9IjYwIiBjeT0iNDAiIHI9IjIwIiBmaWxsPSIjMEMyQTgiLz4KPHBhdGggZD0iTTMwIDEwMEw5MCAxMDBMMzAgMTAwWiIgZmlsbD0iIzBCNUZGRiIvPgo8L3N2Zz4K" alt="صورة أمين الصندوق" class="photo">
                     </div>
                     <h3 class="team-name">الديخن السيدة خديجة</h3>
                     <p class="team-role">عضو</p>
                 </div>
-                <div class="team-card">
+                <div class="team-card additional-member" style="display: none;">
                     <div class="team-photo">
                         <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIwIiBoZWlnaHQ9IjEyMCIgdmlld0JveD0iMCAwIDEyMCAxMjAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIxMjAiIGhlaWdodD0iMTIwIiBmaWxsPSIjRjdGOUZDIi8+CjxjaXJjbGUgY3g9IjYwIiBjeT0iNDAiIHI9IjIwIiBmaWxsPSIjMEMyQTgiLz4KPHBhdGggZD0iTTMwIDEwMEw5MCAxMDBMMzAgMTAwWiIgZmlsbD0iIzBCNUZGRiIvPgo8L3N2Zz4K" alt="صورة أمين الصندوق" class="photo">
                     </div>
                     <h3 class="team-name">حمداوي اسيا فاطمة الزهراء</h3>
                     <p class="team-role">عضو</p>
                 </div>
-                <div class="team-card">
+                <div class="team-card additional-member" style="display: none;">
                     <div class="team-photo">
                         <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIwIiBoZWlnaHQ9IjEyMCIgdmlld0JveD0iMCAwIDEyMCAxMjAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIxMjAiIGhlaWdodD0iMTIwIiBmaWxsPSIjRjdGOUZDIi8+CjxjaXJjbGUgY3g9IjYwIiBjeT0iNDAiIHI9IjIwIiBmaWxsPSIjMEMyQTgiLz4KPHBhdGggZD0iTTMwIDEwMEw5MCAxMDBMMzAgMTAwWiIgZmlsbD0iIzBCNUZGRiIvPgo8L3N2Zz4K" alt="صورة أمين الصندوق" class="photo">
                     </div>
@@ -248,13 +247,20 @@
                     <p class="team-role">عضو</p>
                 </div>
                 
-                <div class="team-card">
+                <div class="team-card additional-member" style="display: none;">
                     <div class="team-photo">
                         <img src="media/supervisor.jpg" alt="صورة المشرف الأكاديمي" class="photo">
                     </div>
                     <h3 class="team-name">قتال الهاشمي</h3>
                     <p class="team-role">الاستاذ المشرف</p>
                 </div>
+            </div>
+            
+            <!-- Show More Button -->
+            <div class="team-actions">
+                <button class="btn btn-secondary" id="show-more-btn" onclick="toggleTeamMembers()">
+                    عرض المزيد
+                </button>
             </div>
         </div>
     </section>
@@ -438,39 +444,18 @@
             });
         });
 
-        // ICS file download function
-        function downloadICS() {
-            const event = {
-                title: 'افتتاح نادي Smart Bytes',
-                start: '20251026T100000',
-                end: '20251026T120000',
-                description: 'حفل افتتاح نادي Smart Bytes العلمي - كلية العلوم والتكنولوجيا',
-                location: 'قاعة السمعي البصري – كلية العلوم والتكنولوجيا'
-            };
 
-            const icsContent = `BEGIN:VCALENDAR
-VERSION:2.0
-PRODID:-//Smart Bytes Club//Event//EN
-BEGIN:VEVENT
-UID:smartbytes-opening@univ.tmr
-DTSTAMP:${new Date().toISOString().replace(/[-:]/g, '').split('.')[0]}Z
-DTSTART:${event.start}
-DTEND:${event.end}
-SUMMARY:${event.title}
-DESCRIPTION:${event.description}
-LOCATION:${event.location}
-END:VEVENT
-END:VCALENDAR`;
-
-            const blob = new Blob([icsContent], { type: 'text/calendar' });
-            const url = window.URL.createObjectURL(blob);
-            const link = document.createElement('a');
-            link.href = url;
-            link.download = 'smartbytes-opening.ics';
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
-            window.URL.revokeObjectURL(url);
+        // Toggle team members visibility
+        function toggleTeamMembers() {
+            const additionalMembers = document.querySelectorAll('.additional-member');
+            const showMoreBtn = document.getElementById('show-more-btn');
+            const isHidden = additionalMembers[0].style.display === 'none';
+            
+            additionalMembers.forEach(member => {
+                member.style.display = isHidden ? 'block' : 'none';
+            });
+            
+            showMoreBtn.textContent = isHidden ? 'عرض أقل' : 'عرض المزيد';
         }
 
     </script>
