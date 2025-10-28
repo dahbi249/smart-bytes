@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bytes System – Smart Bytes Club</title>
+
+    <!-- Meta tags for social sharing -->
+    <meta name="description"
+        content="نظام التنقيط الداخلي لنادي Smart Bytes العلمي - نظام تحفيزي لتشجيع الالتزام والإبداع">
+    <meta name="keywords" content="نظام التنقيط، Smart Bytes، نادي علمي، تحفيز، تنقيط">
+
+    <!-- Open Graph meta tags -->
+    <meta property="og:title" content="Bytes System – Smart Bytes Club">
+    <meta property="og:description" content="نظام التنقيط الداخلي لنادي Smart Bytes العلمي">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="ar_AR">
+
+    <!-- Google Fonts - Cairo for Arabic -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="media/smartBytesLogo.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="media/smartBytesLogo.png">
+    <link rel="apple-touch-icon" href="media/smartBytesLogo.png">
+    <link rel="shortcut icon" href="media/smartBytesLogo.png">
+
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+        /* Bytes System Specific Styles */
+        .bytes-hero {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-light) 100%);
+            min-height: 70vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .bytes-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMzAiIGN5PSIzMCIgcj0iMiIgZmlsbD0icmdiYSgyNTUsIDI1NSwgMjU1LCAwLjEpIi8+Cjwvc3ZnPgo=') repeat;
+            opacity: 0.1;
+        }
+
+        .bytes-hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            color: white;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-md);
+        }
+
+        .bytes-hero-title {
+            font-size: var(--font-size-3xl);
+            font-weight: 700;
+            margin-bottom: var(--spacing-md);
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .bytes-hero-description {
+            font-size: var(--font-size-lg);
+            line-height: 1.8;
+            opacity: 0.9;
+            margin-bottom: var(--spacing-xl);
+        }
+
+        /* Objectives Section */
+        .objectives {
+            padding: var(--spacing-2xl) 0;
+            background: var(--light-bg);
+        }
+
+        .objectives-list {
+            max-width: 800px;
+            margin: 0 auto;
+            list-style: none;
+            padding: 0;
+        }
+
+        .objectives-list li {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-md);
+            padding: var(--spacing-md) 0;
+            font-size: var(--font-size-lg);
+            color: var(--dark-text);
+            border-bottom: 1px solid var(--gray-light);
+        }
+
+        .objectives-list li:last-child {
+            border-bottom: none;
+        }
+
+        .objective-icon {
+            color: var(--accent-color);
+            font-size: var(--font-size-xl);
+            font-weight: bold;
+        }
+
+        /* Scoring Table Section */
+        .scoring-table-section {
+            padding: var(--spacing-2xl) 0;
+            background: var(--white);
+        }
+
+        .scoring-table-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            overflow-x: auto;
+        }
+
+        .scoring-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .scoring-table th {
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+            color: white;
+            padding: var(--spacing-lg);
+            font-weight: 600;
+            font-size: var(--font-size-lg);
+            text-align: center;
+        }
+
+        .scoring-table td {
+            padding: var(--spacing-md);
+            text-align: center;
+            border-bottom: 1px solid var(--gray-light);
+            font-size: var(--font-size-base);
+        }
+
+        .scoring-table tr:hover {
+            background: var(--light-bg);
+            transform: scale(1.02);
+            transition: all 0.3s ease;
+        }
+
+        .scoring-table tr:hover td {
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+
+        .category-icon {
+            font-size: var(--font-size-lg);
+            margin-left: var(--spacing-sm);
+        }
+
+        .bytes-count {
+            font-weight: 700;
+            color: var(--accent-color);
+            font-size: var(--font-size-lg);
+        }
+
+        .bytes-count.negative {
+            color: #ff4757;
+        }
+
+        /* Levels Section */
+        .levels {
+            padding: var(--spacing-2xl) 0;
+            background: var(--light-bg);
+        }
+
+        .levels-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--spacing-lg);
+            margin-top: var(--spacing-xl);
+        }
+
+        .level-card {
+            background: var(--white);
+            padding: var(--spacing-xl);
+            border-radius: var(--radius-lg);
+            text-align: center;
+            box-shadow: var(--shadow-md);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .level-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .level-card.new-byte {
+            border-color: var(--accent-color);
+        }
+
+        .level-card.active-byte {
+            border-color: var(--primary-color);
+        }
+
+        .level-card.pro-byte {
+            border-color: var(--primary-light);
+        }
+
+        .level-card.master-byte {
+            border-color: var(--accent-color);
+        }
+
+        .level-icon {
+            font-size: 3rem;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .level-title {
+            font-size: var(--font-size-xl);
+            font-weight: 700;
+            margin-bottom: var(--spacing-sm);
+            color: var(--dark-text);
+        }
+
+        .level-range {
+            font-size: var(--font-size-lg);
+            color: var(--primary-color);
+            font-weight: 600;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .level-description {
+            color: var(--gray-medium);
+            line-height: 1.6;
+        }
+
+        /* Rewards Section */
+        .rewards {
+            padding: var(--spacing-2xl) 0;
+            background: var(--white);
+        }
+
+        .rewards-list {
+            max-width: 800px;
+            margin: 0 auto;
+            list-style: none;
+            padding: 0;
+        }
+
+        .rewards-list li {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-md);
+            padding: var(--spacing-lg) 0;
+            font-size: var(--font-size-lg);
+            color: var(--dark-text);
+            border-bottom: 1px solid var(--gray-light);
+        }
+
+        .rewards-list li:last-child {
+            border-bottom: none;
+        }
+
+        .reward-icon {
+            font-size: var(--font-size-xl);
+            font-weight: bold;
+        }
+
+        .motivational-quote {
+            text-align: center;
+            margin-top: var(--spacing-xl);
+            padding: var(--spacing-xl);
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+            border-radius: var(--radius-lg);
+            color: white;
+            font-size: var(--font-size-xl);
+            font-weight: 600;
+            box-shadow: var(--shadow-lg);
+        }
+
+        /* Back to Home Button */
+        .back-to-home {
+            text-align: center;
+            margin-top: var(--spacing-xl);
+        }
+
+        .back-to-home-btn {
+            display: inline-block;
+            padding: var(--spacing-md) var(--spacing-xl);
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+            color: white;
+            text-decoration: none;
+            border-radius: var(--radius-lg);
+            font-weight: 600;
+            font-size: var(--font-size-lg);
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow-md);
+        }
+
+        .back-to-home-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in-up {
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .bytes-hero-title {
+                font-size: var(--font-size-2xl);
+            }
+
+            .bytes-hero-description {
+                font-size: var(--font-size-base);
+            }
+
+            .scoring-table th,
+            .scoring-table td {
+                padding: var(--spacing-sm);
+                font-size: var(--font-size-sm);
+            }
+
+            .levels-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .objectives-list li,
+            .rewards-list li {
+                font-size: var(--font-size-base);
+            }
+
+            .motivational-quote {
+                font-size: var(--font-size-lg);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .scoring-table-container {
+                font-size: var(--font-size-sm);
+            }
+
+            .scoring-table th,
+            .scoring-table td {
+                padding: var(--spacing-xs);
+            }
+        }
+
+        /* Dashboard / Leaderboard Section */
+        .dashboard {
+            padding: var(--spacing-2xl) 0;
+            background: var(--white);
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--gray-medium);
+            margin-bottom: var(--spacing-lg);
+            font-size: var(--font-size-lg);
+        }
+
+        .leaderboard {
+            max-width: 800px;
+            margin: 0 auto;
+            overflow-x: auto;
+        }
+
+        .leaderboard-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: var(--light-bg);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .leaderboard-table th {
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+            color: white;
+            padding: var(--spacing-md);
+            font-weight: 600;
+            font-size: var(--font-size-lg);
+            text-align: center;
+        }
+
+        .leaderboard-table td {
+            padding: var(--spacing-md);
+            text-align: center;
+            font-size: var(--font-size-base);
+            border-bottom: 1px solid var(--gray-light);
+        }
+
+        .leaderboard-table tr:hover {
+            background: #f8f9fa;
+            transform: scale(1.01);
+            transition: all 0.2s ease;
+        }
+
+        .rank-1 td {
+            background: linear-gradient(135deg, #ffd700, #ffecb3);
+            font-weight: 700;
+        }
+
+        .rank-2 td {
+            background: linear-gradient(135deg, #c0c0c0, #f0f0f0);
+            font-weight: 700;
+        }
+
+        .rank-3 td {
+            background: linear-gradient(135deg, #cd7f32, #f4c490);
+            font-weight: 700;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <nav class="nav">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <img src="media/smartBytesLogo.png" alt="شعار نادي Smart Bytes" class="logo">
+                    <span class="logo-text">نادي Smart Bytes العلمي</span>
+                </div>
+
+                <div class="nav-menu" id="nav-menu">
+                    <ul class="nav-list">
+                        <li class="nav-item">
+                            <a href="index.html" class="nav-link">الرئيسية</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="index.html#about" class="nav-link">من نحن</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="index.html#team" class="nav-link">فريقنا</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="courses.html" class="nav-link">الدورات</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="bytes-system.html" class="nav-link active">نظام التنقيط</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="index.html#contact" class="nav-link">تواصل</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="nav-toggle" id="nav-toggle">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="bytes-hero">
+        <div class="bytes-hero-content fade-in-up">
+            <h1 class="bytes-hero-title">⚙️ نظام التنقيط الداخلي – Bytes System</h1>
+            <p class="bytes-hero-description">
+                نظام تحفيزي داخل النادي العلمي Smart Bytes، يهدف إلى تشجيع الالتزام، الإبداع، والموازنة بين النشاط
+                العلمي والأداء الأكاديمي.
+            </p>
+        </div>
+    </section>
+
+    <!-- Objectives Section -->
+    <section class="objectives">
+        <div class="container">
+            <h2 class="section-title">🎯 الأهداف</h2>
+            <ul class="objectives-list fade-in-up">
+                <li>
+                    <span class="objective-icon">✓</span>
+                    <span>تعزيز روح المبادرة والمشاركة داخل النادي.</span>
+                </li>
+                <li>
+                    <span class="objective-icon">✓</span>
+                    <span>مكافأة الأعضاء المتميزين علميًا وسلوكيًا.</span>
+                </li>
+                <li>
+                    <span class="objective-icon">✓</span>
+                    <span>ضمان التوازن بين الدراسة والأنشطة الموازية.</span>
+                </li>
+                <li>
+                    <span class="objective-icon">✓</span>
+                    <span>تطوير مهارات القيادة، التنظيم، والتواصل.</span>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Scoring Table Section -->
+    <section class="scoring-table-section">
+        <div class="container">
+            <h2 class="section-title">📊 جدول التنقيط</h2>
+            <div class="scoring-table-container fade-in-up">
+                <table class="scoring-table">
+                    <thead>
+                        <tr>
+                            <th>الفئة</th>
+                            <th>النشاط أو السلوك</th>
+                            <th>عدد الـBytes</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="category-icon">⚙️</span> المشاركة والانضباط</td>
+                            <td>حضور اجتماع رسمي للنادي</td>
+                            <td><span class="bytes-count">+5</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="category-icon">⚙️</span> المشاركة والانضباط</td>
+                            <td>الالتزام بالمواعيد والمهام المسندة</td>
+                            <td><span class="bytes-count">+5</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="category-icon">⚙️</span> المشاركة والانضباط</td>
+                            <td>الغياب عن اجتماع دون عذر</td>
+                            <td><span class="bytes-count negative">-5</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="category-icon">⚙️</span> المشاركة والانضباط</td>
+                            <td>الالتزام والمثابرة طيلة النشاط</td>
+                            <td><span class="bytes-count">+10</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="category-icon">💡</span> الإبداع والمبادرة</td>
+                            <td>حضور اجتماع رسمي</td>
+                            <td><span class="bytes-count">+10</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="category-icon">💡</span> الإبداع والمبادرة</td>
+                            <td>إعداد محتوى أو عرض تقني</td>
+                            <td><span class="bytes-count">+15</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="category-icon">💡</span> الإبداع والمبادرة</td>
+                            <td>تطوير مشروع صغير باسم النادي</td>
+                            <td><span class="bytes-count">+20</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="category-icon">💡</span> الإبداع والمبادرة</td>
+                            <td>المساهمة في ورشة أو تدريب</td>
+                            <td><span class="bytes-count">+10</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="category-icon">💡</span> الإبداع والمبادرة</td>
+                            <td>تقديم ورشة أو تأطير تدريب</td>
+                            <td><span class="bytes-count">+20</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="category-icon">🧩</span> العمل الجماعي</td>
+                            <td>المشاركة في تنظيم نشاط أو فعالية</td>
+                            <td><span class="bytes-count">+10</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="category-icon">🧩</span> العمل الجماعي</td>
+                            <td>التنسيق بين الفرق أو المهام</td>
+                            <td><span class="bytes-count">+15</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="category-icon">🧩</span> العمل الجماعي</td>
+                            <td>روح التعاون والمساعدة</td>
+                            <td><span class="bytes-count">+5</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="category-icon">🧩</span> العمل الجماعي</td>
+                            <td>سلوك إيجابي وتحفيزي داخل الفريق</td>
+                            <td><span class="bytes-count">+5</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="category-icon">🎥</span> الإعلام والتواصل</td>
+                            <td>المساهمة في إعداد منشورات أو تصاميم</td>
+                            <td><span class="bytes-count">+10</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="category-icon">🎥</span> الإعلام والتواصل</td>
+                            <td>تغطية حدث (تصوير / مونتاج / كتابة محتوى)</td>
+                            <td><span class="bytes-count">+10</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="category-icon">🎥</span> الإعلام والتواصل</td>
+                            <td>إدارة الصفحة أو التفاعل مع المتابعين</td>
+                            <td><span class="bytes-count">+5</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="category-icon">🌟</span> التميز والقيادة</td>
+                            <td>قيادة فريق بنجاح في نشاط معين</td>
+                            <td><span class="bytes-count">+20</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="category-icon">🌟</span> التميز والقيادة</td>
+                            <td>تمثيل النادي في تظاهرة جامعية</td>
+                            <td><span class="bytes-count">+15</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="category-icon">🌟</span> التميز والقيادة</td>
+                            <td>الحصول على تكريم أو إنجاز باسم النادي</td>
+                            <td><span class="bytes-count">+20</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="category-icon">🚫</span> سلوكيات سلبية</td>
+                            <td>تأخر متكرر أو عدم التزام</td>
+                            <td><span class="bytes-count negative">-5</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="category-icon">🚫</span> سلوكيات سلبية</td>
+                            <td>إهمال المهام أو خلق توتر داخل الفريق</td>
+                            <td><span class="bytes-count negative">-10</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+    <!-- Leaderboard / Dashboard Section -->
+    <section class="dashboard">
+        <div class="container">
+            <h2 class="section-title">🏅 لوحة المتصدرين – Bytes Dashboard</h2>
+            <p class="section-subtitle fade-in-up">
+                الأعضاء الأكثر نشاطًا وتميزًا خلال هذا السداسي 🚀
+            </p>
+
+            <div class="leaderboard fade-in-up">
+                <table class="leaderboard-table">
+                    <thead>
+                        <tr>
+                            <th>الترتيب</th>
+                            <th>العضو</th>
+                            <th>المستوى</th>
+                            <th>عدد الـBytes</th>
+                        </tr>
+                    </thead>
+                    <tbody id="leaderboard-body">
+                        <!-- البيانات تُملأ ديناميكياً -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Levels Section -->
+    <section class="levels">
+        <div class="container">
+            <h2 class="section-title">🧠 المستويات</h2>
+            <div class="levels-grid fade-in-up">
+                <div class="level-card new-byte">
+                    <div class="level-icon">🌱</div>
+                    <h3 class="level-title">New Byte</h3>
+                    <div class="level-range">0–30</div>
+                    <p class="level-description">عضو مبتدئ</p>
+                </div>
+
+                <div class="level-card active-byte">
+                    <div class="level-icon">⚡</div>
+                    <h3 class="level-title">Active Byte</h3>
+                    <div class="level-range">31–60</div>
+                    <p class="level-description">عضو فعّال</p>
+                </div>
+
+                <div class="level-card pro-byte">
+                    <div class="level-icon">🚀</div>
+                    <h3 class="level-title">Pro Byte</h3>
+                    <div class="level-range">61–100</div>
+                    <p class="level-description">مؤهل للانضمام إلى الفرق</p>
+                </div>
+
+                <div class="level-card master-byte">
+                    <div class="level-icon">👑</div>
+                    <h3 class="level-title">Master Byte</h3>
+                    <div class="level-range">+100</div>
+                    <p class="level-description">عضو قيادي</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rewards Section -->
+    <section class="rewards">
+        <div class="container">
+            <h2 class="section-title">🏆 التحفيز والتكريم</h2>
+            <ul class="rewards-list fade-in-up">
+                <li>
+                    <span class="reward-icon">🥇</span>
+                    <span>أعلى عدد من الـBytes</span>
+                </li>
+                <li>
+                    <span class="reward-icon">🧠</span>
+                    <span>العضو الأكاديمي المتميز</span>
+                </li>
+                <li>
+                    <span class="reward-icon">🤝</span>
+                    <span>الفريق الأكثر نشاطًا</span>
+                </li>
+                <li>
+                    <span class="reward-icon">🌟</span>
+                    <span>العضو الأكثر تطورًا</span>
+                </li>
+            </ul>
+
+            <div class="motivational-quote fade-in-up">
+                ⚡ "اجمع الـBytes... طوّر مهاراتك... واصنع مستقبلك!" ⚡
+            </div>
+
+            <div class="back-to-home">
+                <a href="index.html" class="back-to-home-btn">رجوع إلى الصفحة الرئيسية</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <h3 class="footer-title">نادي Smart Bytes العلمي</h3>
+                    <p class="footer-description">كلية العلوم والتكنولوجيا، جامعة تمنراست</p>
+                </div>
+
+                <div class="footer-links">
+                    <h4 class="footer-links-title">روابط سريعة</h4>
+                    <ul class="footer-links-list">
+                        <li><a href="index.html#about" class="footer-link">من نحن</a></li>
+                        <li><a href="index.html#team" class="footer-link">فريقنا</a></li>
+                        <li><a href="index.html#contact" class="footer-link">تواصل</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p class="footer-copyright">© 2025 نادي Smart Bytes — كلية العلوم والتكنولوجيا، جامعة تمنراست</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile menu toggle
+        const navToggle = document.getElementById('nav-toggle');
+        const navMenu = document.getElementById('nav-menu');
+
+        navToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('show-menu');
+            navToggle.classList.toggle('active');
+        });
+
+        // Close menu when clicking on a link
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('show-menu');
+                navToggle.classList.remove('active');
+            });
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Fade in animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all fade-in-up elements
+        document.querySelectorAll('.fade-in-up').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+            observer.observe(el);
+        });
+        // Sample leaderboard data (replace later with dynamic data)
+const leaderboardData = [
+    { name: "محمد أمين", level: "Master Byte 👑", bytes: 145 },
+    { name: "آية بن صالح", level: "Pro Byte 🚀", bytes: 120 },
+    { name: "عبد الرحمن كمال", level: "Pro Byte 🚀", bytes: 110 },
+    { name: "سارة قادري", level: "Active Byte ⚡", bytes: 95 },
+    { name: "ياسين بلقاسم", level: "Active Byte ⚡", bytes: 80 }
+];
+
+const leaderboardBody = document.getElementById("leaderboard-body");
+
+leaderboardData.forEach((member, index) => {
+    const row = document.createElement("tr");
+    row.classList.add(`rank-${index + 1}`);
+
+    row.innerHTML = `
+        <td>${index + 1}</td>
+        <td>${member.name}</td>
+        <td>${member.level}</td>
+        <td><strong>${member.bytes}</strong></td>
+    `;
+    leaderboardBody.appendChild(row);
+});
+
+    </script>
+</body>
+
+</html>
