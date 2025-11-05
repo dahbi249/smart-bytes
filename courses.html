@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الدورات التدريبية - نادي Smart Bytes العلمي</title>
+
+    <!-- Meta tags for social sharing -->
+    <meta name="description" content="الدورات التدريبية المتخصصة في التكنولوجيا والبرمجة - نادي Smart Bytes العلمي">
+    <meta name="keywords" content="دورات تدريبية، برمجة، تكنولوجيا، نادي Smart Bytes، جامعة تمنراست">
+
+    <!-- Open Graph meta tags -->
+    <meta property="og:title" content="الدورات التدريبية - نادي Smart Bytes">
+    <meta property="og:description" content="دورات تدريبية متخصصة في التكنولوجيا والبرمجة">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="ar_AR">
+
+    <!-- Google Fonts - Cairo for Arabic -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="media/smartBytesLogo.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="media/smartBytesLogo.png">
+    <link rel="apple-touch-icon" href="media/smartBytesLogo.png">
+    <link rel="shortcut icon" href="media/smartBytesLogo.png">
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <nav class="nav">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <img src="media/smartBytesLogo.png" alt="شعار نادي Smart Bytes" class="logo">
+                    <span class="logo-text">نادي Smart Bytes العلمي</span>
+                </div>
+
+                <div class="nav-menu" id="nav-menu">
+                    <ul class="nav-list">
+                        <li class="nav-item">
+                            <a href="index.html" class="nav-link">الرئيسية</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="index.html#about" class="nav-link">من نحن</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="index.html#team" class="nav-link">فريقنا</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="courses.html" class="nav-link active">الدورات</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="bytes-system.html" class="nav-link">نظام التنقيط</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="index.html#contact" class="nav-link">تواصل</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="nav-toggle" id="nav-toggle">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero courses-hero" id="home">
+        <div class="hero-container">
+            <div class="hero-logo">
+                <img src="media/smartBytesLogo.png" alt="شعار نادي Smart Bytes" class="hero-logo-img">
+            </div>
+            <div class="hero-content">
+                <h1 class="hero-title">الدورات التدريبية المتخصصة</h1>
+                <p class="hero-subtitle">تطوير مهاراتك التقنية مع أفضل المدربين</p>
+                <div class="hero-buttons">
+                    <a href="#upcoming-courses" class="btn btn-primary">استكشف الدورات</a>
+                    <a href="#registration" class="btn btn-secondary">سجل الآن</a>
+                </div>
+            </div>
+        </div>
+        <div class="hero-overlay"></div>
+    </section>
+
+    <!-- Courses Overview Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <h2 class="section-title">برنامجنا التدريبي</h2>
+            <p class="about-description">
+                نقدم مجموعة متنوعة من الدورات التدريبية المتخصصة في مجال التكنولوجيا والبرمجة،
+                مصممة لتطوير مهارات الطلاب وتجهيزهم لسوق العمل. جميع دوراتنا تقدمها نخبة من المدربين المتخصصين
+                مع ضمان الحصول على شهادات معتمدة.
+            </p>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <img src="media/programmer.png" alt="برمجة" class="icon">
+                    </div>
+                    <h3 class="feature-title">البرمجة</h3>
+                    <p class="feature-description">تعلم لغات البرمجة الحديثة وتطوير التطبيقات</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <img src="media/machine-learning.png" alt="الذكاء الاصطناعي" class="icon">
+                    </div>
+                    <h3 class="feature-title">الذكاء الاصطناعي</h3>
+                    <p class="feature-description">استكشاف عالم الذكاء الاصطناعي والتعلم الآلي</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <img src="media/task-management.png" alt="إدارة المشاريع" class="icon">
+                    </div>
+                    <h3 class="feature-title">إدارة المشاريع</h3>
+                    <p class="feature-description">تعلم إدارة المشاريع التقنية بطرق احترافية</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Open Course Section -->
+    <section class="open-course" id="open-course">
+        <div class="container">
+            <h2 class="section-title">الدورة المفتوحة للتسجيل</h2>
+            <div class="open-course-container">
+                <div class="open-course-card">
+                    <div class="course-header">
+                        <div class="course-icon">
+                            <img src="media/programmer.png" alt="Frontend Development" class="icon">
+                        </div>
+                        <div class="course-badge">مفتوح للتسجيل</div>
+                    </div>
+                    <div class="course-content">
+                        <h3 class="course-title">Latex</h3>
+                        <p class="course-description">
+                            دورة شاملة في إعداد وكتابة المستندات العلمية والاحترافية باستخدام LaTeX،
+                            ستتعلم من خلالها كيفية تنسيق التقارير، الأطروحات، والعروض الأكاديمية بدقة عالية،
+                            مع التركيز على إدارة المراجع، تنسيق المعادلات والجداول، وإنتاج مستندات ذات طابع احترافي
+                            تناسب الأبحاث والمشاريع الجامعية.
+
+                        </p>
+                        <div class="course-details">
+                            <div class="detail-item">
+                                <span class="detail-label">المدة:</span>
+                                <span class="detail-value">3 ساعات</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">المستوى:</span>
+                                <span class="detail-value">مبتدئ</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">البداية:</span>
+                                <span class="detail-value">09 نوفمبر 2025</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">الأيام:</span>
+                                <span class="detail-value">الأحد</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">الوقت:</span>
+                                <span class="detail-value">09:00 - 12:00</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">المكان:</span>
+                                <span class="detail-value">قاعة حاضنة الاعمال - Médiathéque Dowen</span>
+                            </div>
+                        </div>
+                        <div class="course-instructor">
+                            <span class="instructor-label">المدرب:</span>
+                            <span class="instructor-name">الدكتور قتال الهاشمي - الاستاذ المشرف</span>
+                            <br><span class="instructor-label">المساعد:</span>
+                            <span class="instructor-name">دهبي عبد الرحمان - رئيس النادي</span>
+                        </div>
+                        <div class="course-features">
+                            <h4>ما ستحصل عليه:</h4>
+                            <ul>
+                                <li>شهادة مشاركة معتمدة من النادي</li>
+                                <li>مشاريع عملية تطبيقية</li>
+                                <li>دعم مستمر من المدرب</li>
+                                <li>مواد تعليمية شاملة</li>
+                            </ul>
+                        </div>
+                        <div class="course-actions">
+                            <button class="btn btn-primary course-btn" onclick="registerCourse()">
+                                سجل الآن 
+                            </button>
+                            <button class="btn btn-secondary course-info-btn" onclick="showCourseDetails('latex')">
+                                تفاصيل أكثر
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Upcoming Courses Section -->
+    <section class="upcoming-courses" id="upcoming-courses">
+        <div class="container">
+            <h2 class="section-title">الدورات القادمة</h2>
+            <div class="courses-grid">
+
+                <!-- Course 1: Microsoft Office -->
+                <div class="course-card simple-card">
+                    <div class="course-header">
+                        <div class="course-icon">
+                            <img src="media/team.png" alt="Microsoft Office" class="icon">
+                        </div>
+                        <div class="course-badge">قريباً</div>
+                    </div>
+                    <div class="course-content">
+                        <h3 class="course-title">Microsoft Office</h3>
+                        <p class="course-description">
+                            تعلم استخدام برامج Word, Excel, PowerPoint بطرق احترافية ومتقدمة.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Course 2: Java Programming -->
+                <div class="course-card simple-card">
+                    <div class="course-header">
+                        <div class="course-icon">
+                            <img src="media/programmer.png" alt="Java" class="icon">
+                        </div>
+                        <div class="course-badge">قريباً</div>
+                    </div>
+                    <div class="course-content">
+                        <h3 class="course-title">لغة البرمجة Java</h3>
+                        <p class="course-description">
+                            تعلم البرمجة باستخدام Java من الأساسيات إلى التطبيقات المتقدمة.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Course 3: Chess -->
+                <div class="course-card simple-card">
+                    <div class="course-header">
+                        <div class="course-icon">
+                            <img src="media/trophy.png" alt="Chess" class="icon">
+                        </div>
+                        <div class="course-badge">قريباً</div>
+                    </div>
+                    <div class="course-content">
+                        <h3 class="course-title">الشطرنج</h3>
+                        <p class="course-description">
+                            تعلم فن الشطرنج من القواعد الأساسية إلى الاستراتيجيات المتقدمة.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Course 4: Technical English -->
+                <div class="course-card simple-card">
+                    <div class="course-header">
+                        <div class="course-icon">
+                            <img src="media/education.svg" alt="Technical English" class="icon">
+                        </div>
+                        <div class="course-badge">قريباً</div>
+                    </div>
+                    <div class="course-content">
+                        <h3 class="course-title">الإنجليزية التقنية</h3>
+                        <p class="course-description">
+                            تطوير مهارات اللغة الإنجليزية في المجال التقني والمهني.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Course 5: UI/UX Design Figma -->
+                <div class="course-card simple-card">
+                    <div class="course-header">
+                        <div class="course-icon">
+                            <img src="media/idea.png" alt="UI/UX Design" class="icon">
+                        </div>
+                        <div class="course-badge">قريباً</div>
+                    </div>
+                    <div class="course-content">
+                        <h3 class="course-title">تصميم UI/UX - Figma</h3>
+                        <p class="course-description">
+                            تعلم تصميم واجهات المستخدم وتجربة المستخدم باستخدام Figma.
+                        </p>
+                    </div>
+                </div>
+                <!-- Course 6: Frontend Development -->
+                <div class="course-card simple-card">
+                    <div class="course-header">
+                        <div class="course-icon">
+                            <img src="media/programmer.png" alt="Frontend Development" class="icon">
+                        </div>
+                        <div class="course-badge">قريباً</div>
+                    </div>
+                    <div class="course-content">
+                        <h3 class="course-title">Frontend Development</h3>
+                        <p class="course-description">
+                            تعلم تطوير الواجهات الأمامية وتطبيقات الويب باستخدام HTML, CSS, JavaScript.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Course Details Modal -->
+    <div id="courseModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <div id="modalContent"></div>
+        </div>
+    </div>
+
+    <!-- Registration Section
+    <section class="registration-qr" id="registration">
+        <div class="container">
+            <h2 class="section-title">سجل في الدورات</h2>
+            <div class="qr-content">
+                <div class="qr-info">
+                    <h3 class="qr-title">انضم إلى دوراتنا التدريبية</h3>
+                    <p class="qr-description">
+                        اختر الدورة التي تناسبك وسجل الآن للاستفادة من أفضل البرامج التدريبية
+                        في مجال التكنولوجيا والبرمجة مع نخبة من المدربين المتخصصين.
+                    </p>
+                    <div class="qr-features">
+                        <div class="qr-feature">
+                            <span class="feature-icon">✓</span>
+                            <span>شهادات معتمدة</span>
+                        </div>
+                        <div class="qr-feature">
+                            <span class="feature-icon">✓</span>
+                            <span>مدربون متخصصون</span>
+                        </div>
+                        <div class="qr-feature">
+                            <span class="feature-icon">✓</span>
+                            <span>مشاريع عملية</span>
+                        </div>
+                    </div>
+
+                    <div class="registration-actions">
+                        <a href="https://forms.gle/tRiP8qBDZecf7zFc6" target="_blank"
+                            class="btn btn-primary registration-btn">
+                            سجل الآن عبر النموذج
+                        </a>
+                    </div>
+                </div>
+                <div class="qr-code-container">
+                    <img src="media/Member_Registration_Smart_Bytes_Club_-1024.jpeg" alt="كود التسجيل في الدورات"
+                        class="qr-code">
+                    <p class="qr-note">امسح الكود للتسجيل في الدورات</p>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <h3 class="footer-title">نادي Smart Bytes العلمي</h3>
+                    <p class="footer-description">كلية العلوم والتكنولوجيا، جامعة تمنراست</p>
+                </div>
+
+                <div class="footer-links">
+                    <h4 class="footer-links-title">روابط سريعة</h4>
+                    <ul class="footer-links-list">
+                        <li><a href="index.html#about" class="footer-link">من نحن</a></li>
+                        <li><a href="index.html#announcement" class="footer-link">برنامج الافتتاح</a></li>
+                        <li><a href="index.html#team" class="footer-link">فريقنا</a></li>
+                        <li><a href="courses.html" class="footer-link">الدورات</a></li>
+                        <li><a href="index.html#contact" class="footer-link">تواصل</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p class="footer-copyright">© 2025 نادي Smart Bytes — كلية العلوم والتكنولوجيا، جامعة تمنراست</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for mobile menu and course details -->
+    <script>
+        // Mobile menu toggle
+        const navToggle = document.getElementById('nav-toggle');
+        const navMenu = document.getElementById('nav-menu');
+
+        navToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('show-menu');
+            navToggle.classList.toggle('active');
+        });
+
+        // Close menu when clicking on a link
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('show-menu');
+                navToggle.classList.remove('active');
+            });
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Course details modal
+        function showCourseDetails(courseType) {
+            const modal = document.getElementById('courseModal');
+            const modalContent = document.getElementById('modalContent');
+
+            let content = '';
+
+            switch (courseType) {
+                case 'uiux':
+                    content = `
+                        <h2>تصميم واجهات المستخدم UI/UX Design (Figma)</h2>
+                        <div class="course-modal-content">
+                            <h3>محتويات الدورة:</h3>
+                            <ul>
+                                <li>مقدمة في تصميم واجهات المستخدم</li>
+                                <li>مبادئ التصميم والألوان</li>
+                                <li>التصميم باستخدام Figma</li>
+                                <li>إنشاء النماذج التفاعلية</li>
+                                <li>تصميم تجربة المستخدم</li>
+                                <li>مشروع نهائي تطبيقي</li>
+                            </ul>
+                            <h3>المتطلبات:</h3>
+                            <ul>
+                                <li>لا توجد متطلبات مسبقة</li>
+                                <li>حاسوب محمول أو مكتبي</li>
+                                <li>حساب مجاني على Figma</li>
+                            </ul>
+                            <h3>الحالة:</h3>
+                            <p>الدورة قيد التحضير - سيتم الإعلان عن مواعيد التسجيل قريباً</p>
+                        </div>
+                    `;
+                    break;
+                case 'latex':
+                    content = `
+                        <h2>الكتابة الأكاديمية باستخدام LaTeX</h2>
+                        <div class="course-modal-content">
+                            <h3>محتويات الدورة:</h3>
+                            <ul>
+                                <li>مقدمة في LaTeX وفوائده مقارنة ببرامج التحرير التقليدية</li>
+                                <li>إعداد بيئة العمل (التثبيت أو استخدام Overleaf)</li>
+                                <li>بنية ملفات LaTeX وأوامر التنسيق الأساسية</li>
+                                <li>إدراج الصور، الجداول، والمعادلات الرياضية</li>
+                                <li>إدارة المراجع باستخدام BibTeX</li>
+                                <li>تنسيق التقارير والأطروحات بشكل احترافي</li>
+                            </ul>
+                            <h3>المشاريع:</h3>
+                            <ul>
+                                <li>تقرير علمي منسق باستخدام LaTeX</li>
+                                <li>ملف بحث أكاديمي يحتوي على مراجع وصور</li>
+                            </ul>
+                            <h3>الحالة:</h3>
+                            <p>التسجيل مفتوح</p>
+                        </div>
+                    `;
+                    break;
+                case 'frontend':
+                    content = `
+                        <h2>تطوير الواجهات الأمامية - HTML & CSS</h2>
+                        <div class="course-modal-content">
+                            <h3>محتويات الدورة:</h3>
+                            <ul>
+                                <li>أساسيات HTML5</li>
+                                <li>CSS3 المتقدم</li>
+                                <li>التصميم المتجاوب (Responsive Design)</li>
+                                <li>أفضل الممارسات في التطوير</li>
+                                <li>مشاريع تطبيقية</li>
+                                <li>نشر المواقع</li>
+                            </ul>
+                            <h3>المشاريع:</h3>
+                            <ul>
+                                <li>موقع شخصي</li>
+                                <li>صفحة هبوط</li>
+                                <li>تطبيق ويب تفاعلي</li>
+                            </ul>
+                            <h3>الحالة:</h3>
+                            <p>الدورة قيد التحضير - سيتم الإعلان عن مواعيد التسجيل قريباً</p>
+                        </div>
+                    `;
+                case 'graphic':
+                    content = `
+                        <h2>التصميم الجرافيكي (Photoshop, Illustrator)</h2>
+                        <div class="course-modal-content">
+                            <h3>محتويات الدورة:</h3>
+                            <ul>
+                                <li>أساسيات التصميم الجرافيكي</li>
+                                <li>Adobe Photoshop المتقدم</li>
+                                <li>Adobe Illustrator</li>
+                                <li>تصميم الشعارات والهويات البصرية</li>
+                                <li>معالجة الصور</li>
+                                <li>مشاريع احترافية</li>
+                            </ul>
+                            <h3>الأدوات:</h3>
+                            <ul>
+                                <li>Adobe Photoshop</li>
+                                <li>Adobe Illustrator</li>
+                                <li>أدوات التصميم المجانية</li>
+                            </ul>
+                            <h3>الحالة:</h3>
+                            <p>الدورة قيد التحضير - سيتم الإعلان عن مواعيد التسجيل قريباً</p>
+                        </div>
+                    `;
+                    break;
+                case 'git':
+                    content = `
+                        <h2>إدارة المشاريع البرمجية (Git/GitHub)</h2>
+                        <div class="course-modal-content">
+                            <h3>محتويات الدورة:</h3>
+                            <ul>
+                                <li>مقدمة في Git</li>
+                                <li>الأوامر الأساسية</li>
+                                <li>إدارة الفروع (Branches)</li>
+                                <li>GitHub والاستخدام المتقدم</li>
+                                <li>العمل الجماعي</li>
+                                <li>أفضل الممارسات</li>
+                            </ul>
+                            <h3>المشاريع:</h3>
+                            <ul>
+                                <li>مشروع شخصي</li>
+                                <li>مشروع جماعي</li>
+                                <li>إدارة مستودع</li>
+                            </ul>
+                            <h3>الحالة:</h3>
+                            <p>الدورة قيد التحضير - سيتم الإعلان عن مواعيد التسجيل قريباً</p>
+                        </div>
+                    `;
+                    break;
+                case 'english':
+                    content = `
+                        <h2>الإنجليزية التقنية (Technical English)</h2>
+                        <div class="course-modal-content">
+                            <h3>محتويات الدورة:</h3>
+                            <ul>
+                                <li>المصطلحات التقنية الأساسية</li>
+                                <li>قراءة الوثائق التقنية</li>
+                                <li>كتابة التقارير التقنية</li>
+                                <li>التواصل المهني</li>
+                                <li>العروض التقديمية</li>
+                                <li>مشاريع تطبيقية</li>
+                            </ul>
+                            <h3>المهارات:</h3>
+                            <ul>
+                                <li>القراءة التقنية</li>
+                                <li>الكتابة المهنية</li>
+                                <li>التحدث التقني</li>
+                                <li>الاستماع التقني</li>
+                            </ul>
+                            <h3>الحالة:</h3>
+                            <p>الدورة قيد التحضير - سيتم الإعلان عن مواعيد التسجيل قريباً</p>
+                        </div>
+                    `;
+                    break;
+                case 'office':
+                    content = `
+                        <h2>Microsoft Office</h2>
+                        <div class="course-modal-content">
+                            <h3>محتويات الدورة:</h3>
+                            <ul>
+                                <li>Microsoft Word المتقدم</li>
+                                <li>Microsoft Excel المتقدم</li>
+                                <li>Microsoft PowerPoint</li>
+                                <li>التكامل بين البرامج</li>
+                                <li>أتمتة المهام</li>
+                                <li>مشاريع عملية</li>
+                            </ul>
+                            <h3>المهارات:</h3>
+                            <ul>
+                                <li>معالجة النصوص المتقدمة</li>
+                                <li>التحليل الإحصائي</li>
+                                <li>العروض التقديمية</li>
+                                <li>إدارة البيانات</li>
+                            </ul>
+                            <h3>الحالة:</h3>
+                            <p>الدورة قيد التحضير - سيتم الإعلان عن مواعيد التسجيل قريباً</p>
+                        </div>
+                    `;
+                    break;
+                case 'java':
+                    content = `
+                        <h2>لغة البرمجة Java</h2>
+                        <div class="course-modal-content">
+                            <h3>محتويات الدورة:</h3>
+                            <ul>
+                                <li>أساسيات Java</li>
+                                <li>البرمجة الكائنية التوجه</li>
+                                <li>الهياكل البيانات</li>
+                                <li>واجهات المستخدم</li>
+                                <li>قواعد البيانات</li>
+                                <li>مشاريع تطبيقية</li>
+                            </ul>
+                            <h3>المشاريع:</h3>
+                            <ul>
+                                <li>تطبيق سطح المكتب</li>
+                                <li>تطبيق ويب</li>
+                                <li>تطبيق قاعدة بيانات</li>
+                            </ul>
+                            <h3>الحالة:</h3>
+                            <p>الدورة قيد التحضير - سيتم الإعلان عن مواعيد التسجيل قريباً</p>
+                        </div>
+                    `;
+                    break;
+            }
+
+            modalContent.innerHTML = content;
+            modal.style.display = 'block';
+        }
+
+        function closeModal() {
+            document.getElementById('courseModal').style.display = 'none';
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function (event) {
+            const modal = document.getElementById('courseModal');
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
+        }
+
+        // Register course function
+        function registerCourse() {
+            // Redirect to registration form
+            window.open('https://forms.gle/DDxza54bYPA3BZwS6', '_blank');
+        }
+    </script>
+</body>
+
+</html>
