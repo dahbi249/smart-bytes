@@ -141,14 +141,13 @@
                         <div class="course-badge">مفتوح للتسجيل</div>
                     </div>
                     <div class="course-content">
-                        <h3 class="course-title">Latex</h3>
+                        <h3 class="course-title">Python</h3>
                         <p class="course-description">
-                            دورة شاملة في إعداد وكتابة المستندات العلمية والاحترافية باستخدام LaTeX،
-                            ستتعلم من خلالها كيفية تنسيق التقارير، الأطروحات، والعروض الأكاديمية بدقة عالية،
-                            مع التركيز على إدارة المراجع، تنسيق المعادلات والجداول، وإنتاج مستندات ذات طابع احترافي
-                            تناسب الأبحاث والمشاريع الجامعية.
-
+                            دورة تطبيقية موجهة للمبتدئين لتعلّم أساسيات لغة Python، إحدى أشهر لغات البرمجة في العالم.
+                            سيتعرف المشاركون على أساسيات البرمجة، المتغيرات، الشروط، الحلقات، والدوال،
+                            بالإضافة إلى مشاريع عملية بسيطة تساعدهم على بدء رحلتهم في البرمجة بطريقة سهلة وممتعة.
                         </p>
+
                         <div class="course-details">
                             <div class="detail-item">
                                 <span class="detail-label">المدة:</span>
@@ -160,7 +159,7 @@
                             </div>
                             <div class="detail-item">
                                 <span class="detail-label">البداية:</span>
-                                <span class="detail-value">09 نوفمبر 2025</span>
+                                <span class="detail-value">07 ديسمبر 2025</span>
                             </div>
                             <div class="detail-item">
                                 <span class="detail-label">الأيام:</span>
@@ -168,7 +167,7 @@
                             </div>
                             <div class="detail-item">
                                 <span class="detail-label">الوقت:</span>
-                                <span class="detail-value">09:30 - 12:30</span>
+                                <span class="detail-value">10:00 - 13:00</span>
                             </div>
                             <div class="detail-item">
                                 <span class="detail-label">المكان:</span>
@@ -176,10 +175,10 @@
                             </div>
                         </div>
                         <div class="course-instructor">
-                            <span class="instructor-label">المدرب:</span>
-                            <span class="instructor-name">الدكتور قتال الهاشمي - الاستاذ المشرف</span>
-                            <br><span class="instructor-label">المساعد:</span>
-                            <span class="instructor-name">دهبي عبد الرحمان - رئيس النادي</span>
+                            <span class="instructor-label">المدرب-1:</span>
+                            <span class="instructor-name">دهبي عبد الرحمان - رئيس النادي</span><br><br>
+                            <span class="instructor-label">المدرب-2:</span>
+                            <span class="instructor-name">بورمة ملاك - مسؤول الإعلام والاتصال</span>
                         </div>
                         <div class="course-features">
                             <h4>ما ستحصل عليه:</h4>
@@ -192,9 +191,9 @@
                         </div>
                         <div class="course-actions">
                             <button class="btn btn-primary course-btn" onclick="registerCourse()">
-                                سجل الآن 
+                                سجل الآن
                             </button>
-                            <button class="btn btn-secondary course-info-btn" onclick="showCourseDetails('latex')">
+                            <button class="btn btn-secondary course-info-btn" onclick="showCourseDetails('python')">
                                 تفاصيل أكثر
                             </button>
                         </div>
@@ -450,29 +449,34 @@
                         </div>
                     `;
                     break;
-                case 'latex':
+                case 'python':
                     content = `
-                        <h2>الكتابة الأكاديمية باستخدام LaTeX</h2>
-                        <div class="course-modal-content">
-                            <h3>محتويات الدورة:</h3>
-                            <ul>
-                                <li>مقدمة في LaTeX وفوائده مقارنة ببرامج التحرير التقليدية</li>
-                                <li>إعداد بيئة العمل (التثبيت أو استخدام Overleaf)</li>
-                                <li>بنية ملفات LaTeX وأوامر التنسيق الأساسية</li>
-                                <li>إدراج الصور، الجداول، والمعادلات الرياضية</li>
-                                <li>إدارة المراجع باستخدام BibTeX</li>
-                                <li>تنسيق التقارير والأطروحات بشكل احترافي</li>
-                            </ul>
-                            <h3>المشاريع:</h3>
-                            <ul>
-                                <li>تقرير علمي منسق باستخدام LaTeX</li>
-                                <li>ملف بحث أكاديمي يحتوي على مراجع وصور</li>
-                            </ul>
-                            <h3>الحالة:</h3>
-                            <p>التسجيل مفتوح</p>
-                        </div>
-                    `;
+                <h2>أساسيات البرمجة بلغة Python</h2>
+                <div class="course-modal-content">
+                    <h3>محتويات الدورة:</h3>
+                    <ul>
+                        <li>لمحة عامة عن لغة Python واستخداماتها</li>
+                        <li>إعداد بيئة العمل (تثبيت Python و VS Code)</li>
+                        <li>المتغيرات وأنواع البيانات</li>
+                        <li>جمل الشرط (if - else)</li>
+                        <li>الحلقات التكرارية (for - while)</li>
+                        <li>الدوال وكيفية إنشائها واستخدامها</li>
+                        <li>التعامل مع القوائم والمصفوفات</li>
+                        <li>مشروع تطبيقي بسيط للمبتدئين</li>
+                    </ul>
+
+                    <h3>المشاريع:</h3>
+                    <ul>
+                        <li>برنامج بسيط لحساب المعدلات</li>
+                        <li>لعبة صغيرة باستخدام الشروط والحلقات</li>
+                    </ul>
+
+                    <h3>الحالة:</h3>
+                    <p>التسجيل مفتوح</p>
+                </div>
+            `;
                     break;
+
                 case 'frontend':
                     content = `
                         <h2>تطوير الواجهات الأمامية - HTML & CSS</h2>
@@ -639,7 +643,7 @@
         // Register course function
         function registerCourse() {
             // Redirect to registration form
-            window.open('https://forms.gle/DDxza54bYPA3BZwS6', '_blank');
+            window.open('https://forms.gle/1QgtNVvFWYGvvaMRA', '_blank');
         }
     </script>
 </body>
